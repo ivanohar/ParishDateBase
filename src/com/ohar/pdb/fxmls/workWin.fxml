@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ohar.pdb.controller.WorkWinController">
+    <children>
+        <AnchorPane fx:id="workWinToPrint" layoutY="36.0" prefHeight="571.0" prefWidth="900.0" style="-fx-background-color: #FaFaFa; -fx-border-color: silver; -fx-border-radius: 5;" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0">
+         <children>
+            <TextField fx:id="cityField" layoutX="733.0" layoutY="37.0" promptText="Горад" AnchorPane.leftAnchor="730.0" AnchorPane.rightAnchor="19.0" />
+            <TextField fx:id="streetField" layoutX="732.0" layoutY="66.0" promptText="Вуліца" AnchorPane.rightAnchor="19.0" />
+            <TextField fx:id="numberHouseField" layoutX="732.0" layoutY="96.0" promptText="№ дома" AnchorPane.rightAnchor="19.0" />
+            <TextField fx:id="numberFlatField" layoutX="732.0" layoutY="128.0" promptText="Кватэра" AnchorPane.rightAnchor="19.0" />
+            <TextField fx:id="telephonField" layoutX="732.0" layoutY="159.0" promptText="Тэл.:" AnchorPane.rightAnchor="19.0" />
+            <Button fx:id="partnerPlusButton" layoutX="636.0" layoutY="33.0" mnemonicParsing="false" onAction="#addPartner" prefHeight="25.0" prefWidth="21.0" text="+" AnchorPane.topAnchor="33.0">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="child1PlusButton" layoutX="600.0" layoutY="83.0" mnemonicParsing="false" onAction="#addChild1" prefHeight="25.0" prefWidth="84.0" text="Дадаць дзіця" AnchorPane.rightAnchor="198.0">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="otherMember1PlusButton" layoutX="612.0" layoutY="222.0" mnemonicParsing="false" onAction="#addOther1" prefHeight="25.0" prefWidth="95.0" text="Дадаць іншага" AnchorPane.rightAnchor="197.0">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <TextArea fx:id="commentsField" layoutX="324.0" layoutY="395.0" prefHeight="110.0" prefWidth="379.0" promptText="Душпастырскія заўвагі" AnchorPane.leftAnchor="323.0" AnchorPane.rightAnchor="198.0" AnchorPane.topAnchor="394.0" />
+            <TextField fx:id="lastVisitYear" layoutX="762.0" layoutY="258.0" prefHeight="28.0" prefWidth="72.0" promptText="Год" style="-fx-border-color: Silver;" AnchorPane.bottomAnchor="286.0" AnchorPane.leftAnchor="756.0" AnchorPane.rightAnchor="50.0" />
+            <Button fx:id="saveButton" layoutX="554.0" layoutY="534.0" mnemonicParsing="false" onAction="#save" style="-fx-background-color: #2E3348; -fx-background-radius: 5;" text="Захаваць" textFill="#fdfbfb" AnchorPane.bottomAnchor="20.0">
+               <font>
+                  <Font name="Book Antiqua Bold" size="14.0" />
+               </font></Button>
+            <Text fx:id="addresText" layoutX="689.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Адрас:" AnchorPane.leftAnchor="730.0" AnchorPane.topAnchor="10.0" />
+            <Text fx:id="ersonalDateText" layoutX="29.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Асабістыя дадзеныя:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="10.0" />
+            <TextField fx:id="partnerField" editable="false" layoutX="388.0" layoutY="38.0" prefHeight="25.0" prefWidth="227.0" promptText="Муж / Жонка" AnchorPane.topAnchor="37.0" />
+            <Text fx:id="familyMemberText" layoutX="409.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Члены сям'і:" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="10.0" />
+            <Text fx:id="wifeText" layoutX="409.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Жонка:" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="32.0" />
+            <Text fx:id="childrenText" layoutX="328.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Дзеці:" AnchorPane.leftAnchor="320.0" />
+            <Text fx:id="otherMemberText" layoutX="329.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Іншыя:" AnchorPane.leftAnchor="329.0" />
+            <Text fx:id="commentsText" layoutX="380.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Душпастырскія заўвагі:" AnchorPane.leftAnchor="320.0" />
+            <BorderPane layoutX="31.0" layoutY="317.0" />
+            <TextFlow layoutX="31.0" layoutY="363.0" />
+            <Text fx:id="lastVisitYearTex" layoutX="729.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Апошні душпастырскі візіт:" AnchorPane.bottomAnchor="328.98828125" AnchorPane.leftAnchor="729.0" />
+            <TextField fx:id="idField" layoutX="674.0" layoutY="407.0" prefHeight="25.0" prefWidth="24.0" promptText="id" visible="false" />
+            <Button fx:id="deleteButton" layoutX="773.0" layoutY="534.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #2E3348; -fx-background-radius: 5;" text="Выдаліць" textFill="#fdfbfb" AnchorPane.bottomAnchor="20.0">
+               <font>
+                  <Font name="Book Antiqua Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="cancelButton" layoutX="660.0" layoutY="534.0" mnemonicParsing="false" onAction="#cancel" style="-fx-background-color: #2E3348; -fx-background-radius: 5;" text="Адмяніць" textFill="#fdfbfb" AnchorPane.bottomAnchor="20.0">
+               <font>
+                  <Font name="Book Antiqua Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="partnerRemoveButton" layoutX="639.0" layoutY="34.0" mnemonicParsing="false" onAction="#removePartner" prefHeight="25.0" prefWidth="24.0" text="-" AnchorPane.rightAnchor="197.0" AnchorPane.topAnchor="33.0">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <TextField fx:id="idPartnerField" layoutX="268.0" layoutY="158.0" prefHeight="25.0" prefWidth="57.0" promptText="idPartner" visible="false" />
+            <TableView fx:id="childrenTable" layoutX="330.0" layoutY="118.0" prefHeight="90.0" prefWidth="376.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="197.0" AnchorPane.topAnchor="118.0">
+              <columns>
+                 <TableColumn fx:id="idColumn" prefWidth="35" text="id" visible="false" />
+                 <TableColumn fx:id="fioColumn" prefWidth="189.888916015625" text="Прозвішча Імя Імя па бацьку" />
+                 <TableColumn fx:id="birthdayColumn" prefWidth="141.77777099609375" text="Дата нараджэння" />
+                 <TableColumn fx:id="deleteButtonColumn" prefWidth="43.22222900390625" text="-" />
+              </columns>
+            </TableView>
+            <TableView fx:id="otherTable" layoutX="345.0" layoutY="258.0" prefHeight="84.0" prefWidth="376.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="197.0" AnchorPane.topAnchor="258.0">
+               <columns>
+                  <TableColumn fx:id="idOtherColumn" prefWidth="35" text="id" visible="false" />
+                  <TableColumn fx:id="fioOtherColumn" prefWidth="196.55557250976562" text="Прозвішча Імя Імя па бацьку" />
+                  <TableColumn fx:id="birthdayOtherColumn" prefWidth="137.66668701171875" text="Дата нараджэння" />
+                  <TableColumn fx:id="deleteOtherButtonColumn" prefWidth="41.33331298828125" text="-" />
+               </columns>
+            </TableView>
+            <ListView fx:id="visitYears" layoutX="758.0" layoutY="328.0" prefHeight="183.0" prefWidth="92.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="757.0" AnchorPane.rightAnchor="51.0" />
+            <Text fx:id="historyList" layoutX="757.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Гісторыя візітаў:" AnchorPane.bottomAnchor="247.98828125" />
+            <GridPane layoutX="25.0" layoutY="33.0" prefHeight="515.0" prefWidth="268.0" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="32.0">
+               <columnConstraints>
+                  <ColumnConstraints fx:id="personTable" hgrow="SOMETIMES" maxWidth="120.66667175292969" minWidth="10.0" prefWidth="104.66667175292969" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.3333282470703" minWidth="10.0" prefWidth="160.3333282470703" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Адукацыя" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cужанства" GridPane.rowIndex="15">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Канфермацыя" GridPane.rowIndex="14">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="І Камунія" GridPane.rowIndex="13">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Хрост" GridPane.rowIndex="12">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Імя" wrappingWidth="58.1484375" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Імя па бацьку" GridPane.rowIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Дата нараджэння" GridPane.rowIndex="3" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Прозвішча" wrappingWidth="101.51410675048828" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Пол" GridPane.rowIndex="4" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Сямейны стан" GridPane.rowIndex="5" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Праца" GridPane.rowIndex="7" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Рэліг. фармацыя" GridPane.rowIndex="8" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Удзел у Св. Іішы" GridPane.rowIndex="9" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Споведзь" GridPane.rowIndex="10" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Маб.тэл.:" GridPane.rowIndex="11" />
+                  <TextField fx:id="lastNameField" promptText="Прозвішча" GridPane.columnIndex="1">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+                  <TextField fx:id="firstNameField" promptText="Імя" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+                  <TextField fx:id="fatherNameField" promptText="Імя па бацьку" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+                  <DatePicker fx:id="birthdayDate" editable="false" prefHeight="25.0" prefWidth="164.0" promptText="Дата нараджэння" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </DatePicker>
+                  <ComboBox fx:id="genderField" onAction="#changeGender" prefHeight="25.0" prefWidth="175.0" promptText="Пол" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </ComboBox>
+                  <ComboBox fx:id="familyStatusField" prefHeight="25.0" prefWidth="166.0" promptText="Сямейны стан" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </ComboBox>
+                  <TextField fx:id="educationField" promptText="Адукацыя" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+                  <TextField fx:id="professionField" promptText="Праца" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+                  <ComboBox fx:id="religionEducationField" prefHeight="25.0" prefWidth="176.0" promptText="Рэлігійная фармацыя" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="udzelImshyField" prefHeight="25.0" prefWidth="176.0" promptText="Удзел у Св. Іішы" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <ComboBox fx:id="spovedzField" prefHeight="25.0" prefWidth="176.0" promptText="Споведзь" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <TextField fx:id="mobileField" promptText="Маб.тэл.:" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <DatePicker fx:id="hrostDate" editable="false" promptText="Сакрамант Хросту" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <DatePicker fx:id="kamuniyaDate" editable="false" promptText="Першая Камунія" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <DatePicker fx:id="kanfirmazyiaDate" editable="false" promptText="Сакрамант Канфермацыі" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                  <DatePicker fx:id="suzhenstvaDate" editable="false" promptText="Сакрамант Сужанства" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                  <CheckBox fx:id="isHrost" mnemonicParsing="false" onAction="#isHrostAction" GridPane.rowIndex="12" />
+                  <CheckBox fx:id="isKamuniya" mnemonicParsing="false" onAction="#isKamuniyaAction" GridPane.rowIndex="13" />
+                  <CheckBox fx:id="isKanfirmazyia" mnemonicParsing="false" onAction="#isKanfirmazyiaAction" GridPane.rowIndex="14" />
+                  <CheckBox fx:id="isSuzhenstva" mnemonicParsing="false" onAction="#isSuzhenstvaAction" GridPane.rowIndex="15" />
+               </children>
+            </GridPane>
+         </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
