@@ -1,7 +1,6 @@
 package com.ohar.pdb.services;
 
 import com.ohar.pdb.model.User;
-import javafx.collections.ObservableList;
 
 import java.util.List;
 

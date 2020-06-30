@@ -24,6 +24,7 @@ public class UserWinController {
     private SearchUserService userService = AbstractServiceFactory.getInstance().getSearchUserService();
     private ValidationService validationService = AbstractServiceFactory.getInstance().getValidationService();
     private StageHelper helper = StageHelper.getInstance();
+
     @FXML
     private AnchorPane userPanel;
 

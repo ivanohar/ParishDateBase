@@ -98,7 +98,6 @@ public class SearchUserServiceImpl implements SearchUserService {
     public User registration(User user) {
         user.setActivation(Activation.NO);
         user.setStatus(Status.SECRETARY);
-
         String jsonString = AbstractHelper.runConnection("http://localhost:8080/register", "POST", gson.toJson(user).getBytes());
         if (!jsonString.isEmpty()) {
             Type type = new TypeToken<User>() {

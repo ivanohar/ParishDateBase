@@ -1,6 +1,5 @@
 package com.ohar.pdb.helper;
 
-import com.ohar.pdb.controller.AuthorisationController;
 import com.ohar.pdb.controller.FindWinController;
 import com.ohar.pdb.controller.MainWinController;
 import com.ohar.pdb.controller.WorkWinController;
@@ -8,7 +7,6 @@ import com.ohar.pdb.factory.AbstractServiceFactory;
 import com.ohar.pdb.helper.exception.CanNotCreateWindowException;
 import com.ohar.pdb.model.Person;
 import com.ohar.pdb.model.User;
-import com.ohar.pdb.model.enums.Activation;
 import com.ohar.pdb.services.SearchUserService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -152,7 +150,6 @@ public class StageHelper {
         } catch (IOException e) {
             throw new CanNotCreateWindowException(e, windowConfig);
         }
-
         Parent root = loader.getRoot();
         stage.setScene(new Scene(root));
         stage.show();

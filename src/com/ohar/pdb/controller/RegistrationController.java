@@ -3,7 +3,6 @@ package com.ohar.pdb.controller;
 import com.ohar.pdb.factory.AbstractServiceFactory;
 import com.ohar.pdb.helper.StageHelper;
 import com.ohar.pdb.model.User;
-import com.ohar.pdb.services.SearchPersonService;
 import com.ohar.pdb.services.SearchUserService;
 import com.ohar.pdb.services.ValidationService;
 import javafx.event.ActionEvent;
@@ -50,7 +49,6 @@ public class RegistrationController {
     @FXML
     void registrationAction(ActionEvent event) {
     }
-
 
     @FXML
     void initialize() {

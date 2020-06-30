@@ -77,7 +77,6 @@ public class User {
         this.activation = activation;
     }
 
-
     @Override
     public String toString() {
         return "User{" +

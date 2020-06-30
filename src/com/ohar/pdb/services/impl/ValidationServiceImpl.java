@@ -108,8 +108,6 @@ public class ValidationServiceImpl implements ValidationService {
         validateStreet(person.getStreet(), errors);
         validateNumberHouse(person.getNumberHouse(), errors);
         validateNumberFlat(person.getNumberFlat(), errors);
-
-
         return errors;
     }
 

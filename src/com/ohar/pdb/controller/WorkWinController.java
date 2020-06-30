@@ -343,7 +343,6 @@ public class WorkWinController {
         kamuniyaDate.setDisable(true);
         kanfirmazyiaDate.setDisable(true);
         suzhenstvaDate.setDisable(true);
-
     }
 
     private void initializeDeleteButtonTable(TableView<Person> table, TableColumn<Person, Person> column, List<String> list) {
@@ -433,6 +432,7 @@ public class WorkWinController {
             }
         }
     }
+
     private boolean validatePerson(Person person) {
         List<String> errors = validationService.validatePerson(person);
         if (errors.size() > 0) {
@@ -445,6 +445,7 @@ public class WorkWinController {
         }
         return true;
     }
+
     private String checkValue(String value) {
         return (value == null || value.isEmpty()) ? null : value;
     }
@@ -558,19 +559,20 @@ public class WorkWinController {
         }
         table.setItems(models);
     }
-    public void print (final Node node) {
+
+    public void print(final Node node) {
         Printer printer = Printer.getDefaultPrinter();
         PageLayout pageLayout = printer.createPageLayout(Paper.A5, PageOrientation.PORTRAIT, Printer.MarginType.HARDWARE_MINIMUM);
         final double scaleX = pageLayout.getPrintableWidth() / node.getBoundsInParent().getWidth();
         final double scaleY = pageLayout.getPrintableHeight() / node.getBoundsInParent().getHeight();
         node.getTransforms().add(new Scale(scaleX, scaleY));
 
-        PrinterJob job =PrinterJob.createPrinterJob();
-        if (job != null ){
+        PrinterJob job = PrinterJob.createPrinterJob();
+        if (job != null) {
 
             boolean success = job.printPage(node);
             System.out.println("printed");
-            if (success){
+            if (success) {
                 System.out.println(success);
                 job.endJob();
             }
