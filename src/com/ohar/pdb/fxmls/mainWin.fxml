@@ -17,11 +17,9 @@
                 <Menu mnemonicParsing="true" text="File">
                   <items>
                     <MenuItem fx:id="newFileMenu" mnemonicParsing="false" onAction="#openNewWorkWin" text="New" />
-                        <MenuItem fx:id="newFamilyMenuFile" mnemonicParsing="false" onAction="#openNewFamily" text="New Family" />
                         <MenuItem mnemonicParsing="false" onAction="#openFindWin" text="Open" />
                         <MenuItem fx:id="openUserWin" mnemonicParsing="false" onAction="#openUserWinAction" text="User Settings " visible="false" />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" text="Print" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
